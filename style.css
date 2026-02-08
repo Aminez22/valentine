@@ -18,13 +18,14 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 body {
     position: relative;
-    min-height: 100dvh;
+    min-height: 100vh; /* plutôt que 100dvh pour compatibilité mobile */
     background: radial-gradient(circle at top, #7b122f, #4a071c);
-    overflow-x: hidden;
+    overflow: hidden; /* empêche le scroll global */
     background-size: cover;
 }
 
@@ -202,6 +203,7 @@ button {
     color: #666;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, opacity 0.2s ease;
+    touch-action: manipulation;
 }
 
 #no-btn:hover {
@@ -214,22 +216,6 @@ button {
     100% { transform: scale(1); opacity: 1; }
 }
 
-
-/* Mobile */
-@media (max-width: 480px) {
-    #question {
-        font-size: 1.6rem;
-    }
-
-    .buttons {
-        flex-direction: column;
-    }
-
-    button {
-        width: 100%;
-    }
-}
-
 .mobile-only {
     display: none;
 }
@@ -238,17 +224,29 @@ button {
     display: block;
 }
 
+.mobile-card {
+    background: rgba(255,255,255,0.08);
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
+    body {
+        overflow: hidden; /* empêche de scroller et de voir le desktop */
+    }
+
     .desktop-only {
-        display: none;
+        display: none !important; /* s'assure que le desktop est invisible */
     }
 
     .mobile-only {
-        display: flex;
+        display: flex !important;
         align-items: center;
         justify-content: center;
-        height: 100dvh;
+        height: 100vh; /* utilise vh classique pour éviter les bugs de d-dvh */
         width: 100%;
         background: radial-gradient(circle at top, #7b122f, #4a071c);
         color: white;
