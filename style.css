@@ -18,14 +18,14 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 body {
     position: relative;
-    min-height: 100vh; /* plutôt que 100dvh pour compatibilité mobile */
+    min-height: calc(var(--vh, 1vh) * 100);
     background: radial-gradient(circle at top, #7b122f, #4a071c);
-    overflow: hidden; /* empêche le scroll global */
+    overflow: hidden;
     background-size: cover;
 }
 
@@ -75,7 +75,7 @@ body::after {
 
 .page {
     display: none;
-    min-height: 100dvh; /* prend toute la hauteur de l'écran */
+    min-height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -246,7 +246,7 @@ button {
         display: flex !important;
         align-items: center;
         justify-content: center;
-        height: 100vh; /* utilise vh classique pour éviter les bugs de d-dvh */
+        height: calc(var(--vh, 1vh) * 100);
         width: 100%;
         background: radial-gradient(circle at top, #7b122f, #4a071c);
         color: white;
