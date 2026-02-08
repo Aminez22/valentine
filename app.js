@@ -40,14 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         shrinkLevel++;
 
-        noBtn.style.transform = `scale(${Math.max(0.3, 1 - shrinkLevel * 0.2)})`;
+        noBtn.style.transform = `scale(${Math.max(0, 1 - shrinkLevel * 0.2)})`;
 
         const texts = [
             "No 😶",
             "Wait 😳",
             "Hmm 🤔",
             "Are you sure? 😬",
-            "Ok maybe… 🫣"
+            "Ok maybe… 🫣",
+            "😢"
         ];
 
         noBtn.textContent = texts[Math.min(shrinkLevel, texts.length - 1)];
