@@ -24,7 +24,7 @@ body {
     position: relative;
     min-height: 100dvh;
     background: radial-gradient(circle at top, #7b122f, #4a071c);
-    overflow-x: hidden;
+    background-size: cover;
 }
 
 /* PATTERN TOP & BOTTOM */
@@ -44,7 +44,7 @@ body::after {
     mix-blend-mode: lighten;
 
     pointer-events: none;
-    z-index: 0;
+    z-index: -1;
 }
 
 /* Haut */
@@ -228,3 +228,4 @@ button {
         width: 100%;
     }
 }
+
