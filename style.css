@@ -7,6 +7,13 @@
     padding: 0;
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 /* Background général */
 body {
     min-height: 100vh;
@@ -34,9 +41,11 @@ body {
 
 .page {
     display: none;
-    min-height: 100vh;
+    min-height: 100dvh; /* prend toute la hauteur de l'écran */
+    width: 100%;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .page.active {
