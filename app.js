@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+    function setVh() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    // Au chargement et au resize
+    window.addEventListener('resize', setVh);
+    window.addEventListener('orientationchange', setVh);
+    setVh();
+    
     const letterPage = document.getElementById("letter-page");
     const questionPage = document.getElementById("question-page");
     const successPage = document.getElementById("success-page");
