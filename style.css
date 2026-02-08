@@ -233,26 +233,33 @@ button {
 }
 
 /* MOBILE */
+/* MOBILE */
 @media (max-width: 768px) {
     body {
-        overflow: hidden; /* empêche de scroller et de voir le desktop */
+        overflow: hidden; /* pas de scroll */
     }
 
     .desktop-only {
-        display: none !important; /* s'assure que le desktop est invisible */
+        display: none !important;
     }
 
     .mobile-only {
         display: flex !important;
         align-items: center;
         justify-content: center;
-        height: calc(var(--vh, 1vh) * 100);
-        width: 100%;
-        background: radial-gradient(circle at top, #7b122f, #4a071c);
+
+        /* ✅ Full screen fixe */
+        position: fixed;
+        inset: 0; /* top:0; right:0; bottom:0; left:0; */
+        
+        background: rgb(123,18,47);
         color: white;
-        font-family: "Playfair Display", serif;
+        font-family: "Work Sans", sans-serif;
         font-size: 1.4rem;
         text-align: center;
         padding: 2rem;
+
+        /* S'assure que rien ne dépasse */
+        box-sizing: border-box;
     }
 }
