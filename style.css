@@ -235,7 +235,8 @@ button {
 /* MOBILE */
 /* MOBILE */
 @media (max-width: 768px) {
-    body {
+    html, body {
+        background-color: #7b122f;
         overflow: hidden; /* pas de scroll */
     }
 
@@ -263,3 +264,4 @@ button {
         box-sizing: border-box;
     }
 }
+
