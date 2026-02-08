@@ -24,6 +24,7 @@ body {
     position: relative;
     min-height: 100dvh;
     background: radial-gradient(circle at top, #7b122f, #4a071c);
+    overflow-x: hidden;
     background-size: cover;
 }
 
@@ -229,3 +230,31 @@ button {
     }
 }
 
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100dvh;
+        width: 100%;
+        background: radial-gradient(circle at top, #7b122f, #4a071c);
+        color: white;
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        text-align: center;
+        padding: 2rem;
+    }
+}
